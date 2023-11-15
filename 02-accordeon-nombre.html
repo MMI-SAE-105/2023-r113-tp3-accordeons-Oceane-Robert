@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr" 
-x-data="{
-  bouton1: 1,
-  bouton2: 2,
-  bouton3: 3,
-}">
+ 
+>
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -14,32 +11,34 @@ x-data="{
   </head>
   <body>
     <header>
-      <div class="accordeon">
+        <div class="accordeon" x-data="{
+            isOpen: 1,
+          }">
         <section>
           <button
           aria-controls="mainNav" 
-          @click="bouton1 = 1"
+          @click="isOpen = 1"
           >bouton 1</button>
           <p
-          id="mainNav" x-show="bouton1 === 1" x-transition.duration.900ms
+          id="mainNav" x-show="isOpen === 1" x-transition.scale.190.origin.top style="display: none";
           >Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis eaque incidunt nemo earum! Quaerat minima sequi voluptatum ipsum assumenda expedita molestias quia illo. Iste eligendi voluptatum, ea quas dicta magnam!</p>
         </section>
         <section>
           <button
           aria-controls="mainNav" 
-          @click="bouton2 = 2"
+          @click="isOpen = 2"
           >bouton 2</button>
           <p
-          id="mainNav" x-show="bouton2 === 2" x-transition.duration.900ms
+          id="mainNav" x-show="isOpen === 2" x-transition.scale.190.origin.top style="display: none";
           >Iusto fugit iure repellendus praesentium quae architecto eligendi dolore sint magni consectetur mollitia, pariatur reiciendis et nulla commodi quidem excepturi rerum expedita? Deserunt iure velit esse obcaecati odit veritatis commodi.</p>
         </section>
         <section>
           <button
           aria-controls="mainNav" 
-          @click="bouton3 = 3"
+          @click="isOpen = 3"
           >bouton 3</button>
           <p 
-          id="mainNav" x-show="bouton3 === 3" x-transition.duration.900ms
+          id="mainNav" x-show="isOpen === 3" x-transition.scale.190.origin.top style="display: none"
           >Quae voluptatibus, error delectus earum repellat blanditiis, distinctio laborum alias voluptatum officia porro ad dolore inventore accusantium fuga. Qui, inventore! Minus explicabo voluptas dicta dignissimos corporis sapiente a velit culpa.</p>
         </section>
       </div>
