@@ -27,19 +27,19 @@ x-data="{
         <section>
           <button
           aria-controls="mainNav" 
-          @click="bouton2 = ! bouton2"
+          @click="bouton2 = 2"
           >bouton 2</button>
           <p
-          id="mainNav" x-show="bouton2" x-transition.duration.900ms
+          id="mainNav" x-show="bouton2 === 2" x-transition.duration.900ms
           >Iusto fugit iure repellendus praesentium quae architecto eligendi dolore sint magni consectetur mollitia, pariatur reiciendis et nulla commodi quidem excepturi rerum expedita? Deserunt iure velit esse obcaecati odit veritatis commodi.</p>
         </section>
         <section>
           <button
           aria-controls="mainNav" 
-          @click="bouton3 = ! bouton3"
+          @click="bouton3 = 3"
           >bouton 3</button>
           <p 
-          id="mainNav" x-show="bouton3" x-transition.duration.900ms
+          id="mainNav" x-show="bouton3 === 3" x-transition.duration.900ms
           >Quae voluptatibus, error delectus earum repellat blanditiis, distinctio laborum alias voluptatum officia porro ad dolore inventore accusantium fuga. Qui, inventore! Minus explicabo voluptas dicta dignissimos corporis sapiente a velit culpa.</p>
         </section>
       </div>
