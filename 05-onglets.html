@@ -54,16 +54,16 @@
         <li role="tab" :class="{ 'actif': ouvert === 2 }" @click="ouvert = 2">Onglet 2</li>
         <li role="tab" :class="{ 'actif': ouvert === 3 }" @click="ouvert = 3">Onglet 3</li>
       </ul>
-      <div style="position: relative; height: 300px; width: 400px;">
-        <div class="active" role="tabpanel" x-show="ouvert === 1" style="position: absolute; opacity: 1;">
+      <div>
+        <div :class="{ 'active': ouvert === 1 }" class="active" role="tabpanel">
           <h1>Panneau 1</h1>
           <p>Contenu du panneau 1</p>
         </div>
-        <div class="active" role="tabpanel" x-show="ouvert === 2" style="position: absolute; opacity: 0;">
+        <div :class="{ 'active': ouvert === 2 }" class="active" role="tabpanel">
           <h1>Panneau 2</h1>
           <p>Contenu du panneau 2</p>
         </div>
-        <div class="active" role="tabpanel" x-show="ouvert === 3" style="position: absolute; opacity: 0;">
+        <div :class="{ 'active': ouvert === 3 }" class="active" role="tabpanel">
           <h1>Panneau 3</h1>
           <p>Contenu du panneau 3</p>
         </div>
