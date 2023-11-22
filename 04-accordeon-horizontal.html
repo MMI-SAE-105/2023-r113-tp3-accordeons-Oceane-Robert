@@ -5,70 +5,98 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
-      #accordeon {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-      #accordeon li {
-        display: flex;
-        gap: 1rem;
-        align-items: center;
-        padding: 1rem;
-        border: 1px solid #ccc;
-        border-radius: 0.5rem;
-        transition: all 0.3s ease;
-      }
-      #accordeon li.actif {
-        background-color: #ccc;
-      }
-      #accordeon  li figure {
-        display: flex;
-        gap: 1rem;
-        align-items: center;
-        margin: 0;
-      }
-      #accordeon li figure figuration {
-        margin: 0;
-      }
-      #accordeon li figure figcaption {
-        margin: 0;
-      }
+
+    ul#accordeon li {
+      display: inline-block;
+      background-color: #EEE;
+      width: 107px;
+      -webkit-transition: all 1s ease-in-out;
+      -moz-transition: all 1s ease-in-out;
+      -o-transition: all 1s ease-in-out;
+      -ms-transition: all 1s ease-in-out;
+      transition: all 1s ease-in-out;
+    }
+
+    ul#accordeon li.actif {
+      width: 317px;
+    }
+
+    ul#accordeon li {
+      overflow: hidden;
+      height: 90px;
+      list-style-type: none;
+      margin: 3px;
+      padding: 5px;
+      background-color: #EEE;
+      border-radius: 5px;
+    }
+
+    ul#accordeon {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul#accordeon li figure {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul#accordeon li figure {
+      display: table;
+      width: 317px;
+    }
+
+    ul#accordeon li figure img, ul#accordeon li figure figcaption {
+      display: table-cell;
+      vertical-align: top;
+    }
+
+    ul#accordeon li figure figcaption {
+      width: 200px;
+      padding-left: 10px;
+    }
+
+    ul#accordeon li figure h3 {
+      margin: 0px;
+      height: 2em;
+    }
+
+    ul#accordeon li figure p {
+      margin-bottom: 0px;
+    }
+  
     </style>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <title>Accordéon horizontal</title>
   </head>
   <body>
     <h1>Accordéon horizontal</h1>
-    <ul id="accordeon">
-      <li class="actif">
+    <ul id="accordeon" x-data="{ ouvert:1 }">
+      <li :class="{ 'actif': ouvert === 1 }" @click="ouvert = (ouvert === 1)?0:1">
         <figure>
           <img src="https://picsum.photos/100?random=1" alt="" width="102">
-          <figgcaption>
+          <figcaption>
             <h3>Lorem, ipsum dolor.</h3>
             <p>Lorem ipsum dolor sit amet consectetur.</p>
-          </figgcaption>
+          </figcaption>
         </figure>
       </li>
-      <li>
+      <li :class="{ 'actif': ouvert === 2 }" @click="ouvert = (ouvert === 2)?0:2">
         <figure>
           <img src="https://picsum.photos/100?random=2" alt="" width="102">
-          <figgcaption>
+          <figcaption>
             <h3>Aperiam, illo fugiat.</h3>
             <p>Nobis dolor quibusdam officiis repellat deleniti?</p>
-          </figgcaption>
+          </figcaption>
         </figure>
       </li>
-      <li>
+      <li :class="{ 'actif': ouvert === 3 }" @click="ouvert = (ouvert === 3)?0:3">
         <figure>
           <img src="https://picsum.photos/100?random=3" alt="" width="102">
-          <figgcaption>
+          <figcaption>
             <h3>Dolores, eum numquam?</h3>
             <p>Deserunt eum doloribus soluta earum hic?</p>
-          </figgcaption>
+          </figcaption>
         </figure>
       </li>
     </ul>
