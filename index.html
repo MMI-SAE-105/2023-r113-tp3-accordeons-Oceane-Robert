@@ -10,8 +10,12 @@
 <body>
  <nav>
         <ul>
-            <li><a href="../fr/index.html">Francais</a></li>
-            <li><a href="../en/index.html" >English</a></li>
+            <li><a href="../fr/index.html" onclick="document.cookie = 
+                `nf_lang=fr; path=/ ; SameSite=Strict`
+                ">Francais</a></li>
+            <li><a href="../en/index.html" onclick="document.cookie = 
+                `nf_lang=en; path=/ ; SameSite=Strict`
+                ">English</a></li>
         </ul>
     </nav>
 </body>
