@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" 
+ 
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accordeon number</title>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
+  <body>
+    <header>
+        <div class="accordeon" x-data="{
+            isOpen: 1,
+          }">
+        <section>
+          <button
+          aria-controls="mainNav" 
+          @click="isOpen = 1"
+          >bouton 1</button>
+          <p
+          id="mainNav" x-show="isOpen === 1" x-transition.scale.190.origin.top style="display: none";
+          >Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis eaque incidunt nemo earum! Quaerat minima sequi voluptatum ipsum assumenda expedita molestias quia illo. Iste eligendi voluptatum, ea quas dicta magnam!</p>
+        </section>
+        <section>
+          <button
+          aria-controls="mainNav" 
+          @click="isOpen = 2"
+          >bouton 2</button>
+          <p
+          id="mainNav" x-show="isOpen === 2" x-transition.scale.190.origin.top style="display: none";
+          >Iusto fugit iure repellendus praesentium quae architecto eligendi dolore sint magni consectetur mollitia, pariatur reiciendis et nulla commodi quidem excepturi rerum expedita? Deserunt iure velit esse obcaecati odit veritatis commodi.</p>
+        </section>
+        <section>
+          <button
+          aria-controls="mainNav" 
+          @click="isOpen = 3"
+          >bouton 3</button>
+          <p 
+          id="mainNav" x-show="isOpen === 3" x-transition.scale.190 style="display: none"
+          >Quae voluptatibus, error delectus earum repellat blanditiis, distinctio laborum alias voluptatum officia porro ad dolore inventore accusantium fuga. Qui, inventore! Minus explicabo voluptas dicta dignissimos corporis sapiente a velit culpa.</p>
+        </section>
+      </div>
+    </header>
+    <h1>Accordéon mémorisant par un nombre l'élèment ouvert</h1>
+  </body>
+</html>

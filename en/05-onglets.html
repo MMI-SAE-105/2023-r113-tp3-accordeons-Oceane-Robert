@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <title>Onglets</title>
+    <style>
+      #onglets ul {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      #onglets ul li {
+        padding: 10px 15px;
+        cursor: pointer;
+        border: 1px solid #6BB2D3;
+        border-bottom: none;
+        background-color: #5EB4DC;
+        transition: background-color 0.3s ease;
+      }
+      #onglets ul li.actif {
+        border: none;
+        background-color: #B0DFF5;
+
+      }
+      #onglets ul li:last-child {
+        border-bottom: 1px solid #ccc;
+      }
+      #onglets div {
+        position: relative;
+        height: 200px;
+        width: 100%;
+        overflow: hidden;
+      }
+      #onglets div > div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      #onglets div > div.active {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Onglets</h1>
+    <div id="onglets" x-data="{ ouvert: 1 }">
+      <ul role="tablist">
+        <li role="tab" :class="{ 'actif': ouvert === 1 }" @click="ouvert = 1">Onglet 1</li>
+        <li role="tab" :class="{ 'actif': ouvert === 2 }" @click="ouvert = 2">Onglet 2</li>
+        <li role="tab" :class="{ 'actif': ouvert === 3 }" @click="ouvert = 3">Onglet 3</li>
+      </ul>
+      <div>
+        <div :class="{ 'active': ouvert === 1 }" class="active" role="tabpanel">
+          <h1>Panneau 1</h1>
+          <p>Contenu du panneau 1</p>
+        </div>
+        <div :class="{ 'active': ouvert === 2 }" class="active" role="tabpanel">
+          <h1>Panneau 2</h1>
+          <p>Contenu du panneau 2</p>
+        </div>
+        <div :class="{ 'active': ouvert === 3 }" class="active" role="tabpanel">
+          <h1>Panneau 3</h1>
+          <p>Contenu du panneau 3</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
